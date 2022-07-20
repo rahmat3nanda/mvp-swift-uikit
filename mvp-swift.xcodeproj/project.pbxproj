@@ -8,22 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		AF50FCCB2886AC85005E617F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF50FCCA2886AC85005E617F /* AppDelegate.swift */; };
-		AF50FCCD2886AC85005E617F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF50FCCC2886AC85005E617F /* SceneDelegate.swift */; };
-		AF50FCCF2886AC85005E617F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF50FCCE2886AC85005E617F /* ViewController.swift */; };
 		AF50FCD22886AC86005E617F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF50FCD02886AC86005E617F /* Main.storyboard */; };
 		AF50FCD42886AC87005E617F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF50FCD32886AC87005E617F /* Assets.xcassets */; };
 		AF50FCD72886AC87005E617F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF50FCD52886AC87005E617F /* LaunchScreen.storyboard */; };
+		AF50FCE02886AF88005E617F /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = AF50FCDF2886AF88005E617F /* Realm */; };
+		AF50FCE22886AF88005E617F /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AF50FCE12886AF88005E617F /* RealmSwift */; };
+		AF50FCE82886B495005E617F /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF50FCE72886B495005E617F /* ItemModel.swift */; };
+		AF50FCEA2886B4F8005E617F /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF50FCE92886B4F8005E617F /* ItemViewController.swift */; };
+		AF50FCED2886B633005E617F /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF50FCEC2886B633005E617F /* ItemView.swift */; };
+		AF50FCEF2886BAA5005E617F /* ItemPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF50FCEE2886BAA5005E617F /* ItemPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AF50FCC72886AC85005E617F /* mvp-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mvp-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF50FCCA2886AC85005E617F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AF50FCCC2886AC85005E617F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AF50FCCE2886AC85005E617F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AF50FCD12886AC86005E617F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AF50FCD32886AC87005E617F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF50FCD62886AC87005E617F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF50FCD82886AC87005E617F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF50FCE72886B495005E617F /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
+		AF50FCE92886B4F8005E617F /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
+		AF50FCEC2886B633005E617F /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
+		AF50FCEE2886BAA5005E617F /* ItemPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +37,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF50FCE22886AF88005E617F /* RealmSwift in Frameworks */,
+				AF50FCE02886AF88005E617F /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +64,49 @@
 		AF50FCC92886AC85005E617F /* mvp-swift */ = {
 			isa = PBXGroup;
 			children = (
-				AF50FCCA2886AC85005E617F /* AppDelegate.swift */,
-				AF50FCCC2886AC85005E617F /* SceneDelegate.swift */,
-				AF50FCCE2886AC85005E617F /* ViewController.swift */,
+				AF50FCE32886AF9D005E617F /* App */,
+				AF50FCE42886AFC0005E617F /* Model */,
+				AF50FCE52886AFCA005E617F /* View */,
+				AF50FCE62886B42F005E617F /* Presenter */,
 				AF50FCD02886AC86005E617F /* Main.storyboard */,
 				AF50FCD32886AC87005E617F /* Assets.xcassets */,
 				AF50FCD52886AC87005E617F /* LaunchScreen.storyboard */,
 				AF50FCD82886AC87005E617F /* Info.plist */,
 			);
 			path = "mvp-swift";
+			sourceTree = "<group>";
+		};
+		AF50FCE32886AF9D005E617F /* App */ = {
+			isa = PBXGroup;
+			children = (
+				AF50FCCA2886AC85005E617F /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		AF50FCE42886AFC0005E617F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AF50FCE72886B495005E617F /* ItemModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AF50FCE52886AFCA005E617F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AF50FCEC2886B633005E617F /* ItemView.swift */,
+				AF50FCE92886B4F8005E617F /* ItemViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AF50FCE62886B42F005E617F /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				AF50FCEE2886BAA5005E617F /* ItemPresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +125,10 @@
 			dependencies = (
 			);
 			name = "mvp-swift";
+			packageProductDependencies = (
+				AF50FCDF2886AF88005E617F /* Realm */,
+				AF50FCE12886AF88005E617F /* RealmSwift */,
+			);
 			productName = "mvp-swift";
 			productReference = AF50FCC72886AC85005E617F /* mvp-swift.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +157,9 @@
 				Base,
 			);
 			mainGroup = AF50FCBE2886AC85005E617F;
+			packageReferences = (
+				AF50FCDE2886AF88005E617F /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = AF50FCC82886AC85005E617F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,9 +187,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF50FCCF2886AC85005E617F /* ViewController.swift in Sources */,
+				AF50FCE82886B495005E617F /* ItemModel.swift in Sources */,
+				AF50FCEF2886BAA5005E617F /* ItemPresenter.swift in Sources */,
+				AF50FCED2886B633005E617F /* ItemView.swift in Sources */,
+				AF50FCEA2886B4F8005E617F /* ItemViewController.swift in Sources */,
 				AF50FCCB2886AC85005E617F /* AppDelegate.swift in Sources */,
-				AF50FCCD2886AC85005E617F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +409,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AF50FCDE2886AF88005E617F /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AF50FCDF2886AF88005E617F /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AF50FCDE2886AF88005E617F /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		AF50FCE12886AF88005E617F /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AF50FCDE2886AF88005E617F /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AF50FCBF2886AC85005E617F /* Project object */;
 }
